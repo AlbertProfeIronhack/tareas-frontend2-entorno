@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+
+.tarea {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.completado {
+  background-color: #e0ffe0;
+}

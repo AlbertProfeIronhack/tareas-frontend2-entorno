@@ -184,7 +184,7 @@ body::before {
 /* ------------------- */
 /*  MEDIA QUERY MÓVIL  */
 /* ------------------- */
-@media (max-width: 600px) {
+@media (max-width: 770px) {
 
   body {
     padding: 1rem;

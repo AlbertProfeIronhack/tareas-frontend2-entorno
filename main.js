@@ -12,12 +12,18 @@ function mostrarTareas(tareas) {
 
   tareas.forEach((tarea) => {
     const div = document.createElement("div");
-    div.className = "tarea" + (tarea.completado ? " completado" : "");
+    div.className = "tarea";
+if (tarea.completado) {
+  div.classList.add("tarea--completada");
+}
+
+div.classList.add("tarea--nueva");
+
     div.innerHTML = `
           <h3>${tarea.titulo}</h3>
           <p>${tarea.descripcion}</p>
-          <p><strong>Completado:</strong> ${tarea.completado ? "✅" : "❌"}</p>
-          <button onclick="eliminarTarea(${tarea.id})">Eliminar</button>
+          <p><strong>Completado:</strong> ${tarea.completado ? "✌🏻" : "🚫"}</p>
+          <button style="margin-right:10px;" onclick="eliminarTarea(${tarea.id})">Eliminar</button>
           <button onclick="marcarCompletado(${tarea.id}, ${
       tarea.completado
     })">Marcar como ${tarea.completado ? "incompleta" : "completada"}</button>
@@ -59,7 +65,7 @@ async function marcarCompletado(id, estadoActual) {
 
 document
   .getElementById("formulario-tarea")
-  .addEventListener("submit", function (e) {
+  .addEventListener("submit", function(e) {
     e.preventDefault();
     const titulo = document.getElementById("titulo").value;
     const descripcion = document.getElementById("descripcion").value;
